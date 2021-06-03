@@ -13,13 +13,13 @@ abstract class magicWeapon extends baseWeapon {
 class Axe extends phisicalWeapon {
     name: string = 'noob axe'
     lvl: number = 1;
-    damage: number = 15;
+    damage: number = 10;
 }
 
 class magicStuff extends magicWeapon {
     name:string = 'noob stuff';
     lvl:number = 1;
-    damage: number = 10;
+    damage: number = 15;
 }
 
 export {baseWeapon, phisicalWeapon, magicWeapon, magicStuff, Axe};

@@ -48,8 +48,10 @@ class Warrior extends baseChar {
     }
 
     hit(enemy: baseChar) {
-        enemy.hp -= this.weapon.damage;
-        super.hit(enemy);
+
+            enemy.hp -= this.weapon.damage;
+            super.hit(enemy);
+
     }
 }
 

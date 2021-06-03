@@ -9,6 +9,9 @@ mage1.setWeapon(new magicStuff());
 let warrior1 = new Warrior('Жорик', 5);
 warrior1.setWeapon(new Axe());
 
+let mage2 = new Mage('Бодя', 5);
+mage2.setWeapon(new Axe());
+
 
 let fight = new Fight(mage1, warrior1);
 fight.start(); // 123

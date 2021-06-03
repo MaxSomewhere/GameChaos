@@ -44,7 +44,7 @@ var Axe = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = 'noob axe';
         _this.lvl = 1;
-        _this.damage = 15;
+        _this.damage = 10;
         return _this;
     }
     return Axe;
@@ -56,7 +56,7 @@ var magicStuff = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = 'noob stuff';
         _this.lvl = 1;
-        _this.damage = 10;
+        _this.damage = 15;
         return _this;
     }
     return magicStuff;
