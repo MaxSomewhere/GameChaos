@@ -43,6 +43,7 @@ class Mage extends baseChar {
             enemy.hp -= this.weapon.damage;
             super.hit(enemy);
         }
+        return
     }
 
 }

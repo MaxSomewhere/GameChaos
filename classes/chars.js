@@ -53,6 +53,7 @@ var Mage = /** @class */ (function (_super) {
             enemy.hp -= this.weapon.damage;
             _super.prototype.hit.call(this, enemy);
         }
+        return;
     };
     return Mage;
 }(baseChar));
