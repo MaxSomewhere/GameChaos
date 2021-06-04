@@ -13,13 +13,19 @@ abstract class magicWeapon extends baseWeapon {
 class Axe extends phisicalWeapon {
     name: string = 'noob axe'
     lvl: number = 1;
-    damage: number = 10;
+    damage: number = 3;
 }
 
 class magicStuff extends magicWeapon {
     name:string = 'noob stuff';
     lvl:number = 1;
-    damage: number = 15;
+    damage: number = 7;
 }
 
-export {baseWeapon, phisicalWeapon, magicWeapon, magicStuff, Axe};
+class Bow extends phisicalWeapon {
+    name:string = 'noob bow';
+    lvl:number = 1;
+    damage: number = 5;
+}
+
+export {baseWeapon, phisicalWeapon, magicWeapon, magicStuff, Axe, Bow};

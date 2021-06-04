@@ -1,13 +1,13 @@
 "use strict";
 exports.__esModule = true;
-var chars_1 = require("./classes/chars");
-var weapons_1 = require("./classes/weapons");
+var chars = require("./classes/chars");
+var weapon = require("./classes/weapons");
 var fight_1 = require("./classes/fight");
-var mage1 = new chars_1.Mage('Вася', 5);
-mage1.setWeapon(new weapons_1.magicStuff());
-var warrior1 = new chars_1.Warrior('Жорик', 5);
-warrior1.setWeapon(new weapons_1.Axe());
-var mage2 = new chars_1.Mage('Бодя', 5);
-mage2.setWeapon(new weapons_1.Axe());
-var fight = new fight_1.Fight(mage1, warrior1);
+var mage1 = new chars.Mage('Wave', 5);
+mage1.setWeapon(new weapon.magicStuff());
+var warrior1 = new chars.Warrior('Pain', 5);
+warrior1.setWeapon(new weapon.Axe());
+var archer1 = new chars.Archer('Hurrican', 5);
+archer1.setWeapon(new weapon.Bow());
+var fight = new fight_1.Fight(mage1, archer1);
 fight.start(); // 123

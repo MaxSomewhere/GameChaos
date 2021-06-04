@@ -15,62 +15,63 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Bow = exports.Axe = exports.magicStuff = exports.magicWeapon = exports.phisicalWeapon = exports.baseWeapon = void 0;
-var baseWeapon = /** @class */ (function () {
-    function baseWeapon() {
+exports.lightArmor = exports.Robe = exports.heavyArmor = exports.baseArmor = void 0;
+var baseArmor = /** @class */ (function () {
+    function baseArmor() {
     }
-    return baseWeapon;
+    return baseArmor;
 }());
-exports.baseWeapon = baseWeapon;
-var phisicalWeapon = /** @class */ (function (_super) {
-    __extends(phisicalWeapon, _super);
-    function phisicalWeapon() {
+exports.baseArmor = baseArmor;
+var phisicalArmor = /** @class */ (function (_super) {
+    __extends(phisicalArmor, _super);
+    function phisicalArmor() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return phisicalWeapon;
-}(baseWeapon));
-exports.phisicalWeapon = phisicalWeapon;
-var magicWeapon = /** @class */ (function (_super) {
-    __extends(magicWeapon, _super);
-    function magicWeapon() {
+    return phisicalArmor;
+}(baseArmor));
+var magicArmor = /** @class */ (function (_super) {
+    __extends(magicArmor, _super);
+    function magicArmor() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return magicWeapon;
-}(baseWeapon));
-exports.magicWeapon = magicWeapon;
-var Axe = /** @class */ (function (_super) {
-    __extends(Axe, _super);
-    function Axe() {
+    return magicArmor;
+}(baseArmor));
+var heavyArmor = /** @class */ (function (_super) {
+    __extends(heavyArmor, _super);
+    function heavyArmor() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = 'noob axe';
+        _this.name = 'noob heavy armor';
         _this.lvl = 1;
-        _this.damage = 3;
+        _this.hp = 90;
+        _this.mp = 10;
         return _this;
     }
-    return Axe;
-}(phisicalWeapon));
-exports.Axe = Axe;
-var magicStuff = /** @class */ (function (_super) {
-    __extends(magicStuff, _super);
-    function magicStuff() {
+    return heavyArmor;
+}(phisicalArmor));
+exports.heavyArmor = heavyArmor;
+var Robe = /** @class */ (function (_super) {
+    __extends(Robe, _super);
+    function Robe() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = 'noob stuff';
+        _this.name = 'noob robe';
         _this.lvl = 1;
-        _this.damage = 7;
+        _this.hp = 50;
+        _this.mp = 40;
         return _this;
     }
-    return magicStuff;
-}(magicWeapon));
-exports.magicStuff = magicStuff;
-var Bow = /** @class */ (function (_super) {
-    __extends(Bow, _super);
-    function Bow() {
+    return Robe;
+}(magicArmor));
+exports.Robe = Robe;
+var lightArmor = /** @class */ (function (_super) {
+    __extends(lightArmor, _super);
+    function lightArmor() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = 'noob bow';
+        _this.name = 'noob light armor';
         _this.lvl = 1;
-        _this.damage = 5;
+        _this.hp = 60;
+        _this.mp = 25;
         return _this;
     }
-    return Bow;
-}(phisicalWeapon));
-exports.Bow = Bow;
+    return lightArmor;
+}(phisicalArmor));
+exports.lightArmor = lightArmor;
