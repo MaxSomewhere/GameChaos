@@ -37,7 +37,7 @@ var Mage = /** @class */ (function (_super) {
     __extends(Mage, _super);
     function Mage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.hp = 60;
+        _this.hp = 61;
         _this.mp = 50;
         return _this;
     }
@@ -48,12 +48,12 @@ var Mage = /** @class */ (function (_super) {
         this.armor = armor;
     };
     Mage.prototype.hit = function (enemy) {
+        this.hp += this.armor.hp;
         this.mp -= 5;
-        if (this.mp > 0) {
+        if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
             _super.prototype.hit.call(this, enemy);
         }
-        return;
     };
     return Mage;
 }(baseChar));
@@ -95,7 +95,7 @@ var Archer = /** @class */ (function (_super) {
     };
     Archer.prototype.hit = function (enemy) {
         this.mp -= 3;
-        if (this.mp > 0) {
+        if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
             _super.prototype.hit.call(this, enemy);
         }

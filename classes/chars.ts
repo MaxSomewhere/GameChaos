@@ -17,7 +17,7 @@ abstract class baseChar {
     setArmor(armor: armors.baseArmor) {
         this.armor = armor
     }
-    
+
     hit(enemy: baseChar) {
         console.log(`${this.name} атаковал ${enemy.name}. Нанесено ${this.weapon.damage} урона. У ${enemy.name} осталось ${enemy.hp} здоровья.`)
     }
@@ -25,9 +25,10 @@ abstract class baseChar {
 }
 
 class Mage extends baseChar {
-    hp: number = 60;
+    hp: number = 61;
     mp: number = 50;
     weapon: weapons.magicWeapon;
+
 
     setWeapon(weapon: weapons.magicWeapon) {
         this.weapon = weapon
@@ -37,13 +38,15 @@ class Mage extends baseChar {
         this.armor = armor
     }
 
+
     hit(enemy: baseChar) {
+        this.hp += this.armor.hp
         this.mp -= 5;
-        if (this.mp > 0) {
+        if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
             super.hit(enemy);
         }
-        return
+        
     }
 
 }
@@ -85,7 +88,7 @@ class Archer extends baseChar {
 
     hit(enemy: baseChar) {
         this.mp -= 3;
-        if (this.mp > 0) {
+        if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
             super.hit(enemy);
         }

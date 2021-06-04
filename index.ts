@@ -1,9 +1,11 @@
 import * as chars from './classes/chars';
 import * as weapon  from './classes/weapons';
+import * as armors from './classes/armors'
 import { Fight } from './classes/fight';
 
 let mage1 = new chars.Mage('Wave', 5);
 mage1.setWeapon(new weapon.magicStuff());
+mage1.setArmor(new armors.Robe())
 
 
 
