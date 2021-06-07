@@ -20,7 +20,7 @@ abstract class baseChar {
     }
 
     hit(enemy: baseChar) {
-        console.log(`${this.name} атаковал ${enemy.name}. Нанесено ${this.weapon.damage} урона. У ${enemy.name} осталось ${enemy.hp} здоровья.`)
+        console.log(`${this.name} атаковал ${enemy.name}. Нанесено ${this.weapon.damage} урона. У ${enemy.name} осталось ${enemy.hp} здоровья и ${enemy.mp} маны.`)
     }
 
 }
@@ -138,7 +138,7 @@ class Archer extends baseChar {
 
     hit(enemy: baseChar) {
         this.mp -= 3;
-        if (this.hp > 0) {
+        if (this.hp > 0 || this.mp > 0) {
             enemy.hp -= this.weapon.damage;
             super.hit(enemy);
         }
@@ -180,7 +180,7 @@ class Priest extends baseChar {
         this.hp += this.lvl;
         console.log(`${this.name} отхилил ${this.lvl} здоровья.`)
         this.mp -= 5;
-        if (this.hp > 0) {
+        if (this.hp > 0 || this.mp > 0) {
             enemy.hp -= this.weapon.damage;
             super.hit(enemy);
         }
