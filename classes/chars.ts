@@ -178,7 +178,7 @@ class Priest extends baseChar {
 
     hit(enemy: baseChar) {
         this.hp += this.lvl;
-        console.log(`${this.name} отхилил ${this.lvl} ХП.`)
+        console.log(`${this.name} отхилил ${this.lvl} здоровья.`)
         this.mp -= 5;
         if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
