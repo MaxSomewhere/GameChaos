@@ -1,35 +1,35 @@
-abstract class baseWeapon {
+interface baseWeapon {
     name:string;
     lvl:number;
     damage: number;
 }
 
-abstract class phisicalWeapon extends baseWeapon {
+interface phisicalWeapon extends baseWeapon {
 }
 
-abstract class magicWeapon extends baseWeapon {
+interface magicWeapon extends baseWeapon {
 }
 
-class magicStuff extends magicWeapon {
+class magicStuff implements magicWeapon {
     name:string = 'noob stuff';
     lvl:number = 6;
     damage: number = 17;
 }
 
-class priestStuff extends magicWeapon {
+class priestStuff implements magicWeapon {
     name:string = 'noob stuff';
     lvl:number = 1;
     damage: number = 10;
 }
 
-class Axe extends phisicalWeapon {
+class Axe implements phisicalWeapon {
     name: string = 'noob axe'
     lvl: number = 1;
     damage: number = 13;
 }
 
 
-class Bow extends phisicalWeapon {
+class Bow implements phisicalWeapon {
     name:string = 'noob bow';
     lvl:number = 1;
     damage: number = 15;
