@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Bow = exports.Axe = exports.magicStuff = exports.magicWeapon = exports.phisicalWeapon = exports.baseWeapon = void 0;
+exports.Bow = exports.Axe = exports.priestStuff = exports.magicStuff = exports.magicWeapon = exports.phisicalWeapon = exports.baseWeapon = void 0;
 var baseWeapon = /** @class */ (function () {
     function baseWeapon() {
     }
@@ -38,18 +38,6 @@ var magicWeapon = /** @class */ (function (_super) {
     return magicWeapon;
 }(baseWeapon));
 exports.magicWeapon = magicWeapon;
-var Axe = /** @class */ (function (_super) {
-    __extends(Axe, _super);
-    function Axe() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = 'noob axe';
-        _this.lvl = 1;
-        _this.damage = 13;
-        return _this;
-    }
-    return Axe;
-}(phisicalWeapon));
-exports.Axe = Axe;
 var magicStuff = /** @class */ (function (_super) {
     __extends(magicStuff, _super);
     function magicStuff() {
@@ -62,6 +50,30 @@ var magicStuff = /** @class */ (function (_super) {
     return magicStuff;
 }(magicWeapon));
 exports.magicStuff = magicStuff;
+var priestStuff = /** @class */ (function (_super) {
+    __extends(priestStuff, _super);
+    function priestStuff() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = 'noob stuff';
+        _this.lvl = 1;
+        _this.damage = 10;
+        return _this;
+    }
+    return priestStuff;
+}(magicWeapon));
+exports.priestStuff = priestStuff;
+var Axe = /** @class */ (function (_super) {
+    __extends(Axe, _super);
+    function Axe() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = 'noob axe';
+        _this.lvl = 1;
+        _this.damage = 13;
+        return _this;
+    }
+    return Axe;
+}(phisicalWeapon));
+exports.Axe = Axe;
 var Bow = /** @class */ (function (_super) {
     __extends(Bow, _super);
     function Bow() {

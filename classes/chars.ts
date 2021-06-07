@@ -146,4 +146,46 @@ class Archer extends baseChar {
     }
 }
 
-export {baseChar, Mage, Warrior, Archer}
+
+class Priest extends baseChar {
+    hp: number = 78 + (this.lvl * 2);
+    mp: number = 50 + (this.lvl * 2);
+    weapon: weapons.magicWeapon;
+    armor: armors.magicArmor
+    
+
+    setWeapon(weapon: weapons.magicWeapon) {
+        if (!(weapon instanceof weapons.priestStuff)) {
+            throw new Error('This weapon does not belong to your class');
+        }
+        if (this.lvl < weapon.lvl) {
+            throw new Error('Your level is too low for this weapon');
+        }
+        this.weapon = weapon
+    }
+
+    setArmor(armor: armors.magicArmor) {
+        if (!(armor instanceof armors.Robe)) {
+            throw new Error('This armor does not belong to your class');
+        }
+        if (this.lvl < armor.lvl) {
+            throw new Error('Your level is too low for this armor');
+        }
+        this.armor = armor;
+        this.hp += this.armor.hp;
+    }
+
+
+    hit(enemy: baseChar) {
+        this.hp += this.lvl
+        this.mp -= 5;
+        if (this.hp > 0) {
+            enemy.hp -= this.weapon.damage;
+            super.hit(enemy);
+        }
+        
+    }
+
+}
+
+export {baseChar, Mage, Warrior, Archer, Priest}

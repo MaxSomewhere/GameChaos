@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Archer = exports.Warrior = exports.Mage = exports.baseChar = void 0;
+exports.Priest = exports.Archer = exports.Warrior = exports.Mage = exports.baseChar = void 0;
 var weapons = require("./weapons");
 var armors = require("./armors");
 var baseChar = /** @class */ (function () {
@@ -143,3 +143,41 @@ var Archer = /** @class */ (function (_super) {
     return Archer;
 }(baseChar));
 exports.Archer = Archer;
+var Priest = /** @class */ (function (_super) {
+    __extends(Priest, _super);
+    function Priest() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.hp = 78 + (_this.lvl * 2);
+        _this.mp = 50 + (_this.lvl * 2);
+        return _this;
+    }
+    Priest.prototype.setWeapon = function (weapon) {
+        if (!(weapon instanceof weapons.priestStuff)) {
+            throw new Error('This weapon does not belong to your class');
+        }
+        if (this.lvl < weapon.lvl) {
+            throw new Error('Your level is too low for this weapon');
+        }
+        this.weapon = weapon;
+    };
+    Priest.prototype.setArmor = function (armor) {
+        if (!(armor instanceof armors.Robe)) {
+            throw new Error('This armor does not belong to your class');
+        }
+        if (this.lvl < armor.lvl) {
+            throw new Error('Your level is too low for this armor');
+        }
+        this.armor = armor;
+        this.hp += this.armor.hp;
+    };
+    Priest.prototype.hit = function (enemy) {
+        this.hp += this.lvl;
+        this.mp -= 5;
+        if (this.hp > 0) {
+            enemy.hp -= this.weapon.damage;
+            _super.prototype.hit.call(this, enemy);
+        }
+    };
+    return Priest;
+}(baseChar));
+exports.Priest = Priest;
