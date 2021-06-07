@@ -172,6 +172,7 @@ var Priest = /** @class */ (function (_super) {
     };
     Priest.prototype.hit = function (enemy) {
         this.hp += this.lvl;
+        console.log(this.name + " \u043E\u0442\u0445\u0438\u043B\u0438\u043B " + this.lvl + " \u0425\u041F.");
         this.mp -= 5;
         if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;

@@ -32,7 +32,7 @@ class Mage extends baseChar {
     hp: number = 61 + (this.lvl * 2);
     mp: number = 50 + (this.lvl * 2);
     weapon: weapons.magicWeapon;
-    armor: armors.magicArmor
+    armor: armors.magicArmor;
     
 
     setWeapon(weapon: weapons.magicWeapon) {
@@ -84,7 +84,7 @@ class Warrior extends baseChar {
         if (this.lvl < weapon.lvl) {
             throw new Error('Your level is too low for this weapon');
         }
-        this.weapon = weapon
+        this.weapon = weapon;
     }
 
     setArmor(armor: armors.phisicalArmor) {
@@ -122,7 +122,7 @@ class Archer extends baseChar {
         if (this.lvl < weapon.lvl) {
             throw new Error('Your level is too low for this weapon');
         }
-        this.weapon = weapon
+        this.weapon = weapon;
     }
 
     setArmor(armor: armors.phisicalArmor) {
@@ -151,7 +151,7 @@ class Priest extends baseChar {
     hp: number = 78 + (this.lvl * 2);
     mp: number = 50 + (this.lvl * 2);
     weapon: weapons.magicWeapon;
-    armor: armors.magicArmor
+    armor: armors.magicArmor;
     
 
     setWeapon(weapon: weapons.magicWeapon) {
@@ -161,7 +161,7 @@ class Priest extends baseChar {
         if (this.lvl < weapon.lvl) {
             throw new Error('Your level is too low for this weapon');
         }
-        this.weapon = weapon
+        this.weapon = weapon;
     }
 
     setArmor(armor: armors.magicArmor) {
@@ -177,7 +177,8 @@ class Priest extends baseChar {
 
 
     hit(enemy: baseChar) {
-        this.hp += this.lvl
+        this.hp += this.lvl;
+        console.log(`${this.name} отхилил ${this.lvl} ХП.`)
         this.mp -= 5;
         if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
