@@ -55,7 +55,7 @@ var magicStuff = /** @class */ (function (_super) {
     function magicStuff() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = 'noob stuff';
-        _this.lvl = 1;
+        _this.lvl = 6;
         _this.damage = 17;
         return _this;
     }

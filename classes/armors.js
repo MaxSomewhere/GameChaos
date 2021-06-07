@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.lightArmor = exports.Robe = exports.heavyArmor = exports.baseArmor = void 0;
+exports.lightArmor = exports.Robe = exports.heavyArmor = exports.magicArmor = exports.phisicalArmor = exports.baseArmor = void 0;
 var baseArmor = /** @class */ (function () {
     function baseArmor() {
     }
@@ -29,6 +29,7 @@ var phisicalArmor = /** @class */ (function (_super) {
     }
     return phisicalArmor;
 }(baseArmor));
+exports.phisicalArmor = phisicalArmor;
 var magicArmor = /** @class */ (function (_super) {
     __extends(magicArmor, _super);
     function magicArmor() {
@@ -36,6 +37,7 @@ var magicArmor = /** @class */ (function (_super) {
     }
     return magicArmor;
 }(baseArmor));
+exports.magicArmor = magicArmor;
 var heavyArmor = /** @class */ (function (_super) {
     __extends(heavyArmor, _super);
     function heavyArmor() {

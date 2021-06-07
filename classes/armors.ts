@@ -32,4 +32,4 @@ class lightArmor extends phisicalArmor {
     mp: number = 25;
 }
 
-export {baseArmor, heavyArmor, Robe, lightArmor}
+export {baseArmor, phisicalArmor, magicArmor, heavyArmor, Robe, lightArmor}

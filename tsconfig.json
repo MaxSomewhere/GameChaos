@@ -2,11 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "removeComments": true,
-        "outDir": "js",
-        "sourceMap": true,
-        "compileOnSave": true,
-        "compilerOptions": {
-            "target": "es5"
-        }     
-    }
+        "sourceMap": true
+    },
+    "compileOnSave": true
 }

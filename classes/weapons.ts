@@ -18,7 +18,7 @@ class Axe extends phisicalWeapon {
 
 class magicStuff extends magicWeapon {
     name:string = 'noob stuff';
-    lvl:number = 1;
+    lvl:number = 6;
     damage: number = 17;
 }
 

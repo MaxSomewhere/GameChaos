@@ -4,12 +4,14 @@ var chars = require("./classes/chars");
 var weapon = require("./classes/weapons");
 var armors = require("./classes/armors");
 var fight_1 = require("./classes/fight");
-var mage1 = new chars.Mage('Wave', 5);
+var mage1 = new chars.Mage('MagicWave', 7);
 mage1.setWeapon(new weapon.magicStuff());
 mage1.setArmor(new armors.Robe());
-var warrior1 = new chars.Warrior('Pain', 5);
+var warrior1 = new chars.Warrior('DarkKnight', 5);
 warrior1.setWeapon(new weapon.Axe());
-var archer1 = new chars.Archer('Hurrican', 5);
+warrior1.setArmor(new armors.heavyArmor());
+var archer1 = new chars.Archer('ArrowHurrican', 22);
 archer1.setWeapon(new weapon.Bow());
+archer1.setArmor(new armors.lightArmor());
 var fight = new fight_1.Fight(mage1, archer1);
-fight.start(); // 123
+fight.start();
