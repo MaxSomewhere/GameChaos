@@ -147,7 +147,7 @@ class Archer extends baseChar {
                 super.hit(enemy);
             }
         }
-        this.mp -= 3;
+        this.mp -= 3; //213
     }
 }
 
