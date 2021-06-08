@@ -160,7 +160,7 @@ class Priest extends baseChar {
     
 
     setWeapon(weapon: weapons.magicWeapon) {
-        if (!(weapon instanceof weapons.priestStuff)) {
+        if (!(weapon instanceof weapons.priestSoul)) {
             throw new Error('This weapon does not belong to your class');
         }
         if (this.lvl < weapon.lvl) {

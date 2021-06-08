@@ -17,10 +17,10 @@ archer1.setWeapon(new weapon.Bow());
 archer1.setArmor(new armors.lightArmor());
 
 let priest1 = new chars.Priest('Saint', 7);
-priest1.setWeapon(new weapon.priestStuff());
+priest1.setWeapon(new weapon.priestSoul());
 priest1.setArmor(new armors.Robe());
 
 
-let fight = new Fight(warrior1, archer1);
-// let fight = new Fight(mage1, priest1);
+// let fight = new Fight(warrior1, archer1);
+let fight = new Fight(mage1, priest1);
 fight.start();

@@ -158,7 +158,7 @@ var Priest = (function (_super) {
         return _this;
     }
     Priest.prototype.setWeapon = function (weapon) {
-        if (!(weapon instanceof weapons.priestStuff)) {
+        if (!(weapon instanceof weapons.priestSoul)) {
             throw new Error('This weapon does not belong to your class');
         }
         if (this.lvl < weapon.lvl) {

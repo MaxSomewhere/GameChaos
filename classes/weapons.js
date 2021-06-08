@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Bow = exports.Axe = exports.priestStuff = exports.magicStuff = void 0;
+exports.priestSoul = exports.arcaneStuff = exports.Bow = exports.Axe = exports.priestStuff = exports.magicStuff = void 0;
 var magicStuff = (function () {
     function magicStuff() {
         this.name = 'noob stuff';
-        this.lvl = 6;
+        this.lvl = 1;
         this.damage = 17;
     }
     return magicStuff;
@@ -37,3 +37,21 @@ var Bow = (function () {
     return Bow;
 }());
 exports.Bow = Bow;
+var arcaneStuff = (function () {
+    function arcaneStuff() {
+        this.name = 'arcane stuff';
+        this.lvl = 10;
+        this.damage = 38;
+    }
+    return arcaneStuff;
+}());
+exports.arcaneStuff = arcaneStuff;
+var priestSoul = (function () {
+    function priestSoul() {
+        this.name = 'priest soul';
+        this.lvl = 10;
+        this.damage = 22;
+    }
+    return priestSoul;
+}());
+exports.priestSoul = priestSoul;

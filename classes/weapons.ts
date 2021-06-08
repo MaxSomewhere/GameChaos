@@ -12,7 +12,7 @@ interface magicWeapon extends baseWeapon {
 
 class magicStuff implements magicWeapon {
     name:string = 'noob stuff';
-    lvl:number = 6;
+    lvl:number = 1;
     damage: number = 17;
 }
 
@@ -35,4 +35,16 @@ class Bow implements phisicalWeapon {
     damage: number = 15;
 }
 
-export {baseWeapon, phisicalWeapon, magicWeapon, magicStuff, priestStuff, Axe, Bow};
+class arcaneStuff implements magicWeapon {
+    name:string = 'arcane stuff';
+    lvl:number = 10;
+    damage: number = 38;
+}
+
+class priestSoul implements magicWeapon {
+    name:string = 'priest soul';
+    lvl:number = 10;
+    damage: number = 22;
+}
+
+export {baseWeapon, phisicalWeapon, magicWeapon, magicStuff, priestStuff, Axe, Bow, arcaneStuff, priestSoul};
