@@ -58,11 +58,13 @@ class Mage extends baseChar {
 
 
     hit(enemy: baseChar) {
-        this.mp -= 5;
-        if (this.hp > 0) {
-            enemy.hp -= this.weapon.damage;
-            super.hit(enemy);
+        if (this.mp > 0) {
+            if (this.hp > 0) {
+                enemy.hp -= this.weapon.damage;
+                super.hit(enemy);
+            }
         }
+        this.mp -= 5;
         
     }
 
@@ -100,8 +102,10 @@ class Warrior extends baseChar {
 
     hit(enemy: baseChar) {
 
+        if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
             super.hit(enemy);
+        }
 
     }
 }
@@ -137,12 +141,13 @@ class Archer extends baseChar {
     }
 
     hit(enemy: baseChar) {
-        this.mp -= 3;
-        if (this.hp > 0 || this.mp > 0) {
-            enemy.hp -= this.weapon.damage;
-            super.hit(enemy);
+        if (this.mp > 0) {
+            if (this.hp > 0) {
+                enemy.hp -= this.weapon.damage;
+                super.hit(enemy);
+            }
         }
-
+        this.mp -= 3;
     }
 }
 
@@ -177,14 +182,15 @@ class Priest extends baseChar {
 
 
     hit(enemy: baseChar) {
+        if (this.mp > 0) {
+            if (this.hp > 0 || this.mp > 0) {
+                enemy.hp -= this.weapon.damage;
+                super.hit(enemy);
+            }
+        }    
+        this.mp -= 5;
         this.hp += this.lvl;
         console.log(`${this.name} отхилил ${this.lvl} здоровья.`)
-        this.mp -= 5;
-        if (this.hp > 0 || this.mp > 0) {
-            enemy.hp -= this.weapon.damage;
-            super.hit(enemy);
-        }
-        
     }
 
 }

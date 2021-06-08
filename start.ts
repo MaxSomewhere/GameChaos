@@ -21,6 +21,6 @@ priest1.setWeapon(new weapon.priestStuff());
 priest1.setArmor(new armors.Robe());
 
 
-// let fight = new Fight(mage1, archer1);
-let fight = new Fight(archer1, priest1);
+let fight = new Fight(warrior1, archer1);
+// let fight = new Fight(mage1, priest1);
 fight.start();

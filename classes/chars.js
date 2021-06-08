@@ -14,11 +14,11 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Priest = exports.Archer = exports.Warrior = exports.Mage = exports.baseChar = void 0;
 var weapons = require("./weapons");
 var armors = require("./armors");
-var baseChar = /** @class */ (function () {
+var baseChar = (function () {
     function baseChar(name, lvl) {
         this.name = name;
         this.lvl = lvl;
@@ -35,7 +35,7 @@ var baseChar = /** @class */ (function () {
     return baseChar;
 }());
 exports.baseChar = baseChar;
-var Mage = /** @class */ (function (_super) {
+var Mage = (function (_super) {
     __extends(Mage, _super);
     function Mage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -63,16 +63,18 @@ var Mage = /** @class */ (function (_super) {
         this.hp += this.armor.hp;
     };
     Mage.prototype.hit = function (enemy) {
-        this.mp -= 5;
-        if (this.hp > 0) {
-            enemy.hp -= this.weapon.damage;
-            _super.prototype.hit.call(this, enemy);
+        if (this.mp > 0) {
+            if (this.hp > 0) {
+                enemy.hp -= this.weapon.damage;
+                _super.prototype.hit.call(this, enemy);
+            }
         }
+        this.mp -= 5;
     };
     return Mage;
 }(baseChar));
 exports.Mage = Mage;
-var Warrior = /** @class */ (function (_super) {
+var Warrior = (function (_super) {
     __extends(Warrior, _super);
     function Warrior() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -100,13 +102,15 @@ var Warrior = /** @class */ (function (_super) {
         this.hp += this.armor.hp;
     };
     Warrior.prototype.hit = function (enemy) {
-        enemy.hp -= this.weapon.damage;
-        _super.prototype.hit.call(this, enemy);
+        if (this.hp > 0) {
+            enemy.hp -= this.weapon.damage;
+            _super.prototype.hit.call(this, enemy);
+        }
     };
     return Warrior;
 }(baseChar));
 exports.Warrior = Warrior;
-var Archer = /** @class */ (function (_super) {
+var Archer = (function (_super) {
     __extends(Archer, _super);
     function Archer() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -134,16 +138,18 @@ var Archer = /** @class */ (function (_super) {
         this.hp += this.armor.hp;
     };
     Archer.prototype.hit = function (enemy) {
-        this.mp -= 3;
-        if (this.hp > 0 || this.mp > 0) {
-            enemy.hp -= this.weapon.damage;
-            _super.prototype.hit.call(this, enemy);
+        if (this.mp > 0) {
+            if (this.hp > 0) {
+                enemy.hp -= this.weapon.damage;
+                _super.prototype.hit.call(this, enemy);
+            }
         }
+        this.mp -= 3;
     };
     return Archer;
 }(baseChar));
 exports.Archer = Archer;
-var Priest = /** @class */ (function (_super) {
+var Priest = (function (_super) {
     __extends(Priest, _super);
     function Priest() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -171,13 +177,15 @@ var Priest = /** @class */ (function (_super) {
         this.hp += this.armor.hp;
     };
     Priest.prototype.hit = function (enemy) {
+        if (this.mp > 0) {
+            if (this.hp > 0 || this.mp > 0) {
+                enemy.hp -= this.weapon.damage;
+                _super.prototype.hit.call(this, enemy);
+            }
+        }
+        this.mp -= 5;
         this.hp += this.lvl;
         console.log(this.name + " \u043E\u0442\u0445\u0438\u043B\u0438\u043B " + this.lvl + " \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F.");
-        this.mp -= 5;
-        if (this.hp > 0 || this.mp > 0) {
-            enemy.hp -= this.weapon.damage;
-            _super.prototype.hit.call(this, enemy);
-        }
     };
     return Priest;
 }(baseChar));

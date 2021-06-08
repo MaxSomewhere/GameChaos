@@ -25,7 +25,7 @@ class priestStuff implements magicWeapon {
 class Axe implements phisicalWeapon {
     name: string = 'noob axe'
     lvl: number = 1;
-    damage: number = 13;
+    damage: number = 11;
 }
 
 

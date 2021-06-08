@@ -2,7 +2,11 @@
     "compilerOptions": {
         "target": "es5",
         "removeComments": true,
-        "sourceMap": true
+        "watch" : true
     },
-    "compileOnSave": true
+    "compileOnSave": true,
+        "exclude": [
+        "node_modules",
+        "wwwroot"
+    ]
 }

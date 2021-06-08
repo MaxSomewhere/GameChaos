@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var chars = require("./classes/chars");
 var weapon = require("./classes/weapons");
 var armors = require("./classes/armors");
@@ -16,6 +16,5 @@ archer1.setArmor(new armors.lightArmor());
 var priest1 = new chars.Priest('Saint', 7);
 priest1.setWeapon(new weapon.priestStuff());
 priest1.setArmor(new armors.Robe());
-// let fight = new Fight(mage1, archer1);
-var fight = new fight_1.Fight(archer1, priest1);
+var fight = new fight_1.Fight(warrior1, archer1);
 fight.start();
