@@ -1,5 +1,6 @@
 import * as weapons from "./weapons"
 import * as armors from "./armors"
+import * as buff from "../buffs/buffs"
 
 
 abstract class baseChar {
@@ -7,6 +8,7 @@ abstract class baseChar {
     mp: number;          
     weapon: weapons.baseWeapon
     armor: armors.baseArmor
+    buff: buff.baseBuff
 
     constructor (public name: string, public lvl: number){
     }
@@ -17,6 +19,10 @@ abstract class baseChar {
 
     setArmor(armor: armors.baseArmor) {
         this.armor = armor
+    }
+
+    setBuff(buff: buff.baseBuff){
+        this.buff = buff
     }
 
     hit(enemy: baseChar) {
@@ -56,8 +62,13 @@ class Mage extends baseChar {
         this.hp += this.armor.hp;
     }
 
+    setBuff(buff: buff.baseBuff) {
+        this.buff=buff;
+    }
+
 
     hit(enemy: baseChar) {
+
         if (this.mp > 0) {
             if (this.hp > 0) {
                 enemy.hp -= this.weapon.damage;
