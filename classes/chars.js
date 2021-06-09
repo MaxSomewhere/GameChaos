@@ -12,11 +12,11 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.Priest = exports.Archer = exports.Warrior = exports.Mage = exports.baseChar = void 0;
 var weapons = require("./weapons");
 var armors = require("./armors");
-var baseChar = (function () {
+var baseChar = /** @class */ (function () {
     function baseChar(name, lvl) {
         this.name = name;
         this.lvl = lvl;
@@ -33,7 +33,7 @@ var baseChar = (function () {
     return baseChar;
 }());
 exports.baseChar = baseChar;
-var Mage = (function (_super) {
+var Mage = /** @class */ (function (_super) {
     __extends(Mage, _super);
     function Mage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -72,7 +72,7 @@ var Mage = (function (_super) {
     return Mage;
 }(baseChar));
 exports.Mage = Mage;
-var Warrior = (function (_super) {
+var Warrior = /** @class */ (function (_super) {
     __extends(Warrior, _super);
     function Warrior() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -108,7 +108,7 @@ var Warrior = (function (_super) {
     return Warrior;
 }(baseChar));
 exports.Warrior = Warrior;
-var Archer = (function (_super) {
+var Archer = /** @class */ (function (_super) {
     __extends(Archer, _super);
     function Archer() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -142,12 +142,12 @@ var Archer = (function (_super) {
                 _super.prototype.hit.call(this, enemy);
             }
         }
-        this.mp -= 3;
+        this.mp -= 3; //213
     };
     return Archer;
 }(baseChar));
 exports.Archer = Archer;
-var Priest = (function (_super) {
+var Priest = /** @class */ (function (_super) {
     __extends(Priest, _super);
     function Priest() {
         var _this = _super !== null && _super.apply(this, arguments) || this;

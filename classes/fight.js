@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.Fight = void 0;
-var Fight = (function () {
+var Fight = /** @class */ (function () {
     function Fight(fighter1, fighter2) {
         this.fighter1 = fighter1;
         this.fighter2 = fighter2;
