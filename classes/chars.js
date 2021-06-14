@@ -27,6 +27,9 @@ var baseChar = (function () {
     baseChar.prototype.setArmor = function (armor) {
         this.armor = armor;
     };
+    baseChar.prototype.setBuff = function (buff) {
+        this.buff = buff;
+    };
     baseChar.prototype.hit = function (enemy) {
         console.log(this.name + " \u0430\u0442\u0430\u043A\u043E\u0432\u0430\u043B " + enemy.name + ". \u041D\u0430\u043D\u0435\u0441\u0435\u043D\u043E " + this.weapon.damage + " \u0443\u0440\u043E\u043D\u0430. \u0423 " + enemy.name + " \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C " + enemy.hp + " \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F \u0438 " + enemy.mp + " \u043C\u0430\u043D\u044B.");
     };
@@ -59,6 +62,12 @@ var Mage = (function (_super) {
         }
         this.armor = armor;
         this.hp += this.armor.hp;
+    };
+    Mage.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
     };
     Mage.prototype.hit = function (enemy) {
         if (this.mp > 0) {
@@ -99,6 +108,12 @@ var Warrior = (function (_super) {
         this.armor = armor;
         this.hp += this.armor.hp;
     };
+    Warrior.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
+    };
     Warrior.prototype.hit = function (enemy) {
         if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
@@ -134,6 +149,12 @@ var Archer = (function (_super) {
         }
         this.armor = armor;
         this.hp += this.armor.hp;
+    };
+    Archer.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
     };
     Archer.prototype.hit = function (enemy) {
         if (this.mp > 0) {
@@ -173,6 +194,12 @@ var Priest = (function (_super) {
         }
         this.armor = armor;
         this.hp += this.armor.hp;
+    };
+    Priest.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
     };
     Priest.prototype.hit = function (enemy) {
         if (this.mp > 0) {
