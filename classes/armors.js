@@ -1,7 +1,7 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.lightArmor = exports.Robe = exports.heavyArmor = void 0;
-var heavyArmor = /** @class */ (function () {
+var heavyArmor = (function () {
     function heavyArmor() {
         this.name = 'noob heavy armor';
         this.lvl = 1;
@@ -11,7 +11,7 @@ var heavyArmor = /** @class */ (function () {
     return heavyArmor;
 }());
 exports.heavyArmor = heavyArmor;
-var Robe = /** @class */ (function () {
+var Robe = (function () {
     function Robe() {
         this.name = 'noob robe';
         this.lvl = 1;
@@ -21,7 +21,7 @@ var Robe = /** @class */ (function () {
     return Robe;
 }());
 exports.Robe = Robe;
-var lightArmor = /** @class */ (function () {
+var lightArmor = (function () {
     function lightArmor() {
         this.name = 'noob light armor';
         this.lvl = 1;

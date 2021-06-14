@@ -1,7 +1,7 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.priestSoul = exports.arcaneStuff = exports.Bow = exports.Axe = exports.priestStuff = exports.magicStuff = void 0;
-var magicStuff = /** @class */ (function () {
+var magicStuff = (function () {
     function magicStuff() {
         this.name = 'noob stuff';
         this.lvl = 1;
@@ -10,7 +10,7 @@ var magicStuff = /** @class */ (function () {
     return magicStuff;
 }());
 exports.magicStuff = magicStuff;
-var priestStuff = /** @class */ (function () {
+var priestStuff = (function () {
     function priestStuff() {
         this.name = 'noob stuff';
         this.lvl = 1;
@@ -19,7 +19,7 @@ var priestStuff = /** @class */ (function () {
     return priestStuff;
 }());
 exports.priestStuff = priestStuff;
-var Axe = /** @class */ (function () {
+var Axe = (function () {
     function Axe() {
         this.name = 'noob axe';
         this.lvl = 1;
@@ -28,7 +28,7 @@ var Axe = /** @class */ (function () {
     return Axe;
 }());
 exports.Axe = Axe;
-var Bow = /** @class */ (function () {
+var Bow = (function () {
     function Bow() {
         this.name = 'noob bow';
         this.lvl = 1;
@@ -37,7 +37,7 @@ var Bow = /** @class */ (function () {
     return Bow;
 }());
 exports.Bow = Bow;
-var arcaneStuff = /** @class */ (function () {
+var arcaneStuff = (function () {
     function arcaneStuff() {
         this.name = 'arcane stuff';
         this.lvl = 10;
@@ -46,7 +46,7 @@ var arcaneStuff = /** @class */ (function () {
     return arcaneStuff;
 }());
 exports.arcaneStuff = arcaneStuff;
-var priestSoul = /** @class */ (function () {
+var priestSoul = (function () {
     function priestSoul() {
         this.name = 'priest soul';
         this.lvl = 10;

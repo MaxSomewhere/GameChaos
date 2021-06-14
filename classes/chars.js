@@ -12,11 +12,11 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Priest = exports.Archer = exports.Warrior = exports.Mage = exports.baseChar = void 0;
 var weapons = require("./weapons");
 var armors = require("./armors");
-var baseChar = /** @class */ (function () {
+var baseChar = (function () {
     function baseChar(name, lvl) {
         this.name = name;
         this.lvl = lvl;
@@ -27,13 +27,16 @@ var baseChar = /** @class */ (function () {
     baseChar.prototype.setArmor = function (armor) {
         this.armor = armor;
     };
+    baseChar.prototype.setBuff = function (buff) {
+        this.buff = buff;
+    };
     baseChar.prototype.hit = function (enemy) {
         console.log(this.name + " \u0430\u0442\u0430\u043A\u043E\u0432\u0430\u043B " + enemy.name + ". \u041D\u0430\u043D\u0435\u0441\u0435\u043D\u043E " + this.weapon.damage + " \u0443\u0440\u043E\u043D\u0430. \u0423 " + enemy.name + " \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C " + enemy.hp + " \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F \u0438 " + enemy.mp + " \u043C\u0430\u043D\u044B.");
     };
     return baseChar;
 }());
 exports.baseChar = baseChar;
-var Mage = /** @class */ (function (_super) {
+var Mage = (function (_super) {
     __extends(Mage, _super);
     function Mage() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -60,6 +63,12 @@ var Mage = /** @class */ (function (_super) {
         this.armor = armor;
         this.hp += this.armor.hp;
     };
+    Mage.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
+    };
     Mage.prototype.hit = function (enemy) {
         if (this.mp > 0) {
             if (this.hp > 0) {
@@ -72,7 +81,7 @@ var Mage = /** @class */ (function (_super) {
     return Mage;
 }(baseChar));
 exports.Mage = Mage;
-var Warrior = /** @class */ (function (_super) {
+var Warrior = (function (_super) {
     __extends(Warrior, _super);
     function Warrior() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -99,6 +108,12 @@ var Warrior = /** @class */ (function (_super) {
         this.armor = armor;
         this.hp += this.armor.hp;
     };
+    Warrior.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
+    };
     Warrior.prototype.hit = function (enemy) {
         if (this.hp > 0) {
             enemy.hp -= this.weapon.damage;
@@ -108,7 +123,7 @@ var Warrior = /** @class */ (function (_super) {
     return Warrior;
 }(baseChar));
 exports.Warrior = Warrior;
-var Archer = /** @class */ (function (_super) {
+var Archer = (function (_super) {
     __extends(Archer, _super);
     function Archer() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -135,6 +150,12 @@ var Archer = /** @class */ (function (_super) {
         this.armor = armor;
         this.hp += this.armor.hp;
     };
+    Archer.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
+    };
     Archer.prototype.hit = function (enemy) {
         if (this.mp > 0) {
             if (this.hp > 0) {
@@ -142,12 +163,12 @@ var Archer = /** @class */ (function (_super) {
                 _super.prototype.hit.call(this, enemy);
             }
         }
-        this.mp -= 3; //213
+        this.mp -= 3;
     };
     return Archer;
 }(baseChar));
 exports.Archer = Archer;
-var Priest = /** @class */ (function (_super) {
+var Priest = (function (_super) {
     __extends(Priest, _super);
     function Priest() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -173,6 +194,12 @@ var Priest = /** @class */ (function (_super) {
         }
         this.armor = armor;
         this.hp += this.armor.hp;
+    };
+    Priest.prototype.setBuff = function (buff) {
+        this.buff = buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage;
+        }
     };
     Priest.prototype.hit = function (enemy) {
         if (this.mp > 0) {

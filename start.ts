@@ -2,6 +2,7 @@ import * as chars from './classes/chars';
 import * as weapon  from './classes/weapons';
 import * as armors from './classes/armors'
 import { Fight } from './classes/fight';
+import * as buffs from './buffs/buffs'
 
 let mage1 = new chars.Mage('MagicWave', 7);
 mage1.setWeapon(new weapon.magicStuff());
@@ -15,6 +16,7 @@ warrior1.setArmor(new armors.heavyArmor());
 let archer1 = new chars.Archer('ArrowHurrican', 5);
 archer1.setWeapon(new weapon.Bow());
 archer1.setArmor(new armors.lightArmor());
+archer1.setBuff(new buffs.berserk());
 
 let priest1 = new chars.Priest('Saint', 11);
 priest1.setWeapon(new weapon.priestSoul());

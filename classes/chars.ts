@@ -64,6 +64,9 @@ class Mage extends baseChar {
 
     setBuff(buff: buff.baseBuff) {
         this.buff=buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage
+        }
     }
 
 
@@ -111,6 +114,15 @@ class Warrior extends baseChar {
         this.hp += this.armor.hp;
     }
 
+    setBuff(buff: buff.baseBuff) {
+        this.buff=buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage
+        }
+    }
+
+    
+
     hit(enemy: baseChar) {
 
         if (this.hp > 0) {
@@ -151,6 +163,13 @@ class Archer extends baseChar {
         this.hp += this.armor.hp;
     }
 
+    setBuff(buff: buff.baseBuff) {
+        this.buff=buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage
+        }
+    }
+
     hit(enemy: baseChar) {
         if (this.mp > 0) {
             if (this.hp > 0) {
@@ -189,6 +208,13 @@ class Priest extends baseChar {
         }
         this.armor = armor;
         this.hp += this.armor.hp;
+    }
+
+    setBuff(buff: buff.baseBuff) {
+        this.buff=buff;
+        if (buff.damage > 0) {
+            this.buff.damage += this.weapon.damage
+        }
     }
 
 
